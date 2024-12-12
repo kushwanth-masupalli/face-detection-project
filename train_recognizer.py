@@ -33,7 +33,8 @@ def prepare_images():
         images.append(gray)  # Add the grayscale image to the images list
         labels.append(current_label)  # Assign label
         current_label += 1  # Increment the label for the next image
-
+    print("image successfully prepreared")
+    
 # Function to train the recognizer
 def train_recognizer():
     recognizer = cv.face.LBPHFaceRecognizer_create()
@@ -44,5 +45,3 @@ def train_recognizer():
     # Save the trained model to a file
     recognizer.save('face_recognizer.yml')
     print("Model trained and saved as 'face_recognizer.yml'")
-prepare_images()
-train_recognizer()
